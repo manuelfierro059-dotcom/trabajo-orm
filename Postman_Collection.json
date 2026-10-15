@@ -1,0 +1,163 @@
+{
+  "info": {
+    "_postman_id": "orm-flask-postgres-collection",
+    "name": "API Productos - Flask & PostgreSQL",
+    "description": "Colección completa para probar la API con PostgreSQL y pgAdmin 4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "0. Verificación API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "1. Categorías - Crear",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Tecnología\",\n  \"descripcion\": \"Artículos de cómputo y accesorios\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/categorias",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["categorias"]
+        }
+      }
+    },
+    {
+      "name": "2. Categorías - Listar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/categorias",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["categorias"]
+        }
+      }
+    },
+    {
+      "name": "3. Categorías - Detalle por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/categorias/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["categorias", "1"]
+        }
+      }
+    },
+    {
+      "name": "4. Productos - Crear",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Teclado Mecánico\",\n  \"descripcion\": \"Teclado RGB Switches Blue\",\n  \"precio\": 59.99,\n  \"stock_min\": 5,\n  \"categoria_id\": 1,\n  \"disponible\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "5. Productos - Listar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "6. Productos - Detalle por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/products/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["products", "1"]
+        }
+      }
+    },
+    {
+      "name": "7. Entradas - Registrar",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"entra_producto_id\": 1,\n  \"entra_cantidad\": 25,\n  \"entra_factura\": \"FAC-2026-001\",\n  \"entra_stand\": \"Estante B-3\",\n  \"entra_ubicacion\": \"Almacén Central\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/entradas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["entradas"]
+        }
+      }
+    },
+    {
+      "name": "8. Entradas - Listar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/entradas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["entradas"]
+        }
+      }
+    }
+  ]
+}
